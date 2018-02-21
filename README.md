@@ -1,4 +1,4 @@
-# Пимер блога with Nuxt
+# Пример блога with Nuxt
 
 
 ### установка
@@ -9,7 +9,7 @@
 
   npm run dev
   
-then, go to http://localhost:3000
+сервер будет доступен по адресу: http://localhost:3000
 
 ### продакшн build
 
