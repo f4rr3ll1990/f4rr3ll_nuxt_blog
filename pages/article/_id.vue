@@ -17,7 +17,7 @@ export default {
     return !isNaN(+params.id)
   },
   async asyncData({params, error}){
-    const {data} = await axios.get(`http://vue-rest-blog-vue-rest-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/test/${+params.id}`)
+    const {data} = await axios.get(`http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/test/${+params.id}`)
     return data
   },
   head () {

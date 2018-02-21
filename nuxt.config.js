@@ -25,7 +25,7 @@ module.exports = {
   },
   generate: {
     routes () {
-      return axios.get('http://vue-rest-blog-vue-rest-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/test/')
+      return axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/test/')
         .then((res) => {
           var rts = []
           res.data.forEach((d) => {
