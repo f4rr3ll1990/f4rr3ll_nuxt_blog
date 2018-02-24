@@ -2,8 +2,8 @@
 <div>  
   <Navbar :categories="categories" />
   <article class="container">
-    <div class="row article-row">
-      <div class="col-sm-4 post" v-for="article in articles">
+    <div class="row">
+      <div class="col-sm-4 post" v-for="article in articles" v-show="article.category == $route.params.cat">
         <div class="post-wrap">
           <nuxt-link :to="'/articles/' + article.id">
             <img class="img-fluid" :src="article.image" :alt="article.title">
@@ -49,9 +49,6 @@ export default {
 
 
 <style scoped>
-  .article-row {
-    padding-top: 30px;
-  }
   .post h3,
   .post p,
   .post span {
