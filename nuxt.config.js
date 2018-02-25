@@ -1,6 +1,10 @@
 const axios = require('axios')
 
 module.exports = {
+  loading: {
+    color: '#7A0B76',
+    height: '5px'
+  },
   head: {
     titleTemplate: '%s - F4rr3LL Blog',
     meta: [
@@ -25,7 +29,15 @@ module.exports = {
   },
   generate: {
     routes () {
-      return axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/posts/')
+      return axios({
+        url: "https://nuxtrest-2bb1.restdb.io/rest/posts",
+        method: "get",
+        headers: {
+          "content-type": "application/json",
+          "x-apikey": "5a91ed5116d5526228b426f0",
+          "cache-control": "no-cache"
+        }
+      })
         .then((res) => {
           var rts = []
           res.data.forEach((d) => {

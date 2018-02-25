@@ -23,14 +23,27 @@ export default {
     Navbar,
     Footer
   },
-  validate ({ params }) {
-    return !isNaN(+params.id)
-  },
-  async asyncData({ query, error }) {
-    let post = await axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/posts/${+params.id}`')
-    let cats = await axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/categories')
+  async asyncData({ params }) {
+    let post = await axios({
+      url: `https://nuxtrest-2bb1.restdb.io/rest/posts/${params.id}`,
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5a91ed5116d5526228b426f0",
+        "cache-control": "no-cache"
+      }
+    })
+    let cats = await axios({
+      url: "https://nuxtrest-2bb1.restdb.io/rest/categories",
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5a91ed5116d5526228b426f0",
+        "cache-control": "no-cache"
+      }
+    })
     return {
-       article: post.data[0],
+       article: post.data,
        categories: cats.data
     }
   },

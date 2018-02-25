@@ -2,10 +2,10 @@
 <div>  
   <Navbar :categories="categories" />
   <article class="container">
-    <div class="row">
+    <div class="row article-row">
       <div class="col-sm-4 post" v-for="article in articles" v-show="article.category == $route.params.cat">
         <div class="post-wrap">
-          <nuxt-link :to="'/articles/' + article.id">
+          <nuxt-link :to="'/articles/' + article._id">
             <img class="img-fluid" :src="article.image" :alt="article.title">
             <h3>{{ article.title }}</h3>
             <p>{{ article.preview }}</p>
@@ -31,8 +31,24 @@ export default {
     Footer
   },
   async asyncData({ query, error }) {
-    let posts = await axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/posts')
-    let cats = await axios.get('http://nuxt-blog-nuxt-blog.a3c1.starter-us-west-1.openshiftapps.com/rest.php/categories')
+    let posts = await axios({
+      url: `https://nuxtrest-2bb1.restdb.io/rest/posts`,
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5a91ed5116d5526228b426f0",
+        "cache-control": "no-cache"
+      }
+    })
+    let cats = await axios({
+      url: `https://nuxtrest-2bb1.restdb.io/rest/categories`,
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": "5a91ed5116d5526228b426f0",
+        "cache-control": "no-cache"
+      }
+    })
     return {
        articles: posts.data,
        categories: cats.data
@@ -49,6 +65,9 @@ export default {
 
 
 <style scoped>
+  .article-row {
+    padding-top: 30px;
+  }
   .post h3,
   .post p,
   .post span {
