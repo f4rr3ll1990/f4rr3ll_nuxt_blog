@@ -4,7 +4,9 @@
   <article class="container">
     <h1>{{article.title}}</h1>
     <img class="img-fluid" :src="article.image" :alt="article.title">
-    <p class="post-body" v-html="article.body"></p>
+    <no-ssr>
+      <p class="post-body" v-html="article.body"></p>
+    </no-ssr>
     <div class="row justify-content-around">
       <nuxt-link :to="'/'" class="btn btn-outline-primary back-link" tag="button">Back</nuxt-link>
     </div>
@@ -24,6 +26,8 @@ export default {
     Footer
   },
   async asyncData({ params }) {
+    // if (process.server) {
+
     let post = await axios({
       url: `https://nuxtrest-2bb1.restdb.io/rest/posts/${params.id}`,
       method: "get",
@@ -46,6 +50,7 @@ export default {
        article: post.data,
        categories: cats.data
     }
+    // }
   },
   head () {
     return {

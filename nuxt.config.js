@@ -41,7 +41,7 @@ module.exports = {
         .then((res) => {
           var rts = []
           res.data.forEach((d) => {
-            rts.push('/articles/' + d.id)
+            rts.push('/articles/' + d._id)
           })
           return rts
         })
