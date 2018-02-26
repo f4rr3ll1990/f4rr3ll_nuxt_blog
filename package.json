@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Didattica3D/blog#readme",
   "dependencies": {
+    "@nuxtjs/sitemap": "0.0.3",
     "axios": "^0.16.2",
     "bootstrap-vue": "^2.0.0-rc.1",
     "moment": "^2.20.1",
