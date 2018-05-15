@@ -1,103 +1,99 @@
 <template>
-<div>  
-  <Navbar :categories="categories" />
-  <article class="container">
-    <div class="row article-row">
-      <div class="col-sm-4 post" v-for="article in articles">
-        <div class="post-wrap">
-          <nuxt-link :to="'/articles/' + article._id">
-            <img class="img-fluid" :src="article.image" :alt="article.title">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.preview }}</p>
-            <span>{{ article.date | dateFilter }}</span>
-          </nuxt-link>
-        </div>
-      </div>
+<div>
+  <section class="hero">
+    <div class="hero__content container">
+      <h3 class="hero__content-header noselect">Front End Web Developer</h3>
+      <p class="hero__content-description noselect">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates nemo atque impedit debitis illum doloribus animi...</p>
     </div>
-  </article>  
-  <Footer />
+    <no-ssr>
+      <vue-particles
+        color="#c2e9fb"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#c2e9fb"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="6"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+          style="z-index: 0;">
+      </vue-particles>
+    </no-ssr> 
+  </section>
+  <Stack />
 </div>
 </template>
 
 
 <script>
-import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
-import axios from 'axios'
-import moment from 'moment'
-
+import Stack from '~/components/Stack'
 export default {
-  components: {    
-    Navbar,
-    Footer
+  components: {
+    Stack
   },
-  async asyncData({ query, error }) {
-    let posts = await axios({
-      url: `https://nuxtrest-2bb1.restdb.io/rest/posts`,
-      method: "get",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": "5a91ed5116d5526228b426f0",
-        "cache-control": "no-cache"
-      }
-    })
-    let cats = await axios({
-      url: `https://nuxtrest-2bb1.restdb.io/rest/categories`,
-      method: "get",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": "5a91ed5116d5526228b426f0",
-        "cache-control": "no-cache"
-      }
-    })
+  head() {
     return {
-       articles: posts.data,
-       categories: cats.data
-    }
-  },
-  head () {
-    return {
-      title: 'Главная'
-    }
-  },
-  filters: {
-    dateFilter (value) {
-      if (value) {
-        return moment(String(value)).format('MM/DD/YYYY hh:mm')
-      }
-    }
+      title: "Главная"
+    };
   }
-}
-
+};
 </script>
 
+<style lang="sass" scoped>
+  @import url('https://fonts.googleapis.com/css?family=Bungee+Shade')
 
-<style scoped>
-  .article-row {
-    padding-top: 30px;
-  }
-  .post h3,
-  .post p,
-  .post span {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;    
-    font-weight: 350;
-    color: #35495e;
-    letter-spacing: 1px;
-    padding: 15px;
-  }
-  .post-wrap {
-    box-shadow: 0 2px 2px #aaa;
-    padding: 0 0 25px 0;
-  }
-  .post-wrap:hover {
-    box-shadow: 1px 3px 2px #aaa;
-  }
-  h3 {
-    text-align: center;
-    display: block;
-  } 
-  a:hover {
-    color: #35495e;
-    text-decoration: none !important;
-  }
+  a:hover
+    color: #35495e
+    text-decoration: none !important
+
+  #particles-js
+    background: linear-gradient(310deg, #204158 30%, transparent 30%), linear-gradient(340deg, transparent 58%, #0A253E 58%), #16334A
+    background-size: cover
+    position: absolute    
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+
+
+  .hero
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+
+    &__content
+      color: #fff
+      text-align: center
+      z-index: 999
+
+      &-header
+        font-size: 7rem
+        font-family: 'Bungee Shade', cursive;
+        text-shadow: 8px 8px #000
+        text-transform: uppercase
+        margin: 0
+        @media (max-width: 767px)    
+          font-size: 3rem
+
+
+      &-description
+        font-size: 1.3rem
+        font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif  
+        font-weight: 350
+        letter-spacing: 1px
+        padding: 15px
+        text-align: center
+        display: block
+
 </style>

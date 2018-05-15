@@ -11,7 +11,8 @@
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #343a40;
+  /* background-color: #343a40; */
+  background-color: #000;
 }
 </style>
 

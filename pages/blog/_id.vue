@@ -1,6 +1,5 @@
 <template>
 <div>
-  <Navbar :categories="categories" />
   <article class="container">
     <h1>{{article.title}}</h1>
     <img class="img-fluid" :src="article.image" :alt="article.title">
@@ -11,20 +10,13 @@
       <nuxt-link :to="'/'" class="btn btn-outline-primary back-link" tag="button">Back</nuxt-link>
     </div>
   </article> 
-  <Footer />
 </div>
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
 import axios from 'axios'
 
 export default {
-  components: {    
-    Navbar,
-    Footer
-  },
   async asyncData({ params }) {
     // if (process.server) {
 
@@ -37,18 +29,8 @@ export default {
         "cache-control": "no-cache"
       }
     })
-    let cats = await axios({
-      url: "https://nuxtrest-2bb1.restdb.io/rest/categories",
-      method: "get",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": "5a91ed5116d5526228b426f0",
-        "cache-control": "no-cache"
-      }
-    })
     return {
-       article: post.data,
-       categories: cats.data
+       article: post.data
     }
     // }
   },

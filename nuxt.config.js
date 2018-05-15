@@ -12,7 +12,7 @@ const routes = function() {
     .then((res) => {
       var rts = []
       res.data.forEach((d) => {
-        rts.push('/articles/' + d._id)
+        rts.push('/blog/' + d._id)
       })
       return rts
     })
@@ -47,11 +47,14 @@ module.exports = {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'http://f4rr3ll.cc.ua',
+    hostname: 'https://f4rr3ll.netlify.com/',
     cacheTime: 1000 * 60 * 15,
     generate: true, // Enable me when using nuxt generate 
     routes: routes
   },
+  plugins: [
+    { src: '~/plugins/vue-particles', ssr: false }
+  ],
   modules: [
     'bootstrap-vue/nuxt',
     ['@nuxtjs/sitemap', {

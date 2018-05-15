@@ -26,6 +26,11 @@
     "bootstrap-vue": "^2.0.0-rc.1",
     "moment": "^2.20.1",
     "normalize.css": "^7.0.0",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "vue-particles": "^1.0.9"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1"
   }
 }
