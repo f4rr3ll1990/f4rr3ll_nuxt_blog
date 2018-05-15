@@ -440,7 +440,7 @@
           width: 30px
           margin: 10px
     .stack
-        padding: 0 0 50px 0
+        padding: 0 10vw 50px 10vw
         @media (max-width: 767px) 
           padding: 0 0 50px 0
         &__icons
