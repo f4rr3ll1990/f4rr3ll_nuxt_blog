@@ -6,10 +6,10 @@
         </div>
 
         <div class="flex-social">
-            <font-awesome-icon class="icon-3d glitch" :icon="['fab', 'github']" />
-            <font-awesome-icon class="icon-3d glitch" :icon="['fab', 'telegram']" />
-            <font-awesome-icon class="icon-3d glitch" :icon="['fab', 'linkedin']" />
-            <font-awesome-icon class="icon-3d glitch" :icon="['fab', 'skype']" />
+            <a href="https://github.com/f4rr3ll1990" target="_blank"><font-awesome-icon class="icon-3d glitch" :icon="['fab', 'github']" /></a>
+            <a href="tg://resolve?domain=f4rr3ll90"><font-awesome-icon class="icon-3d glitch" :icon="['fab', 'telegram']" /></a>
+            <a href="https://www.linkedin.com/in/mikhail-gura-939068107" target="_blank"><font-awesome-icon class="icon-3d glitch" :icon="['fab', 'linkedin']" /></a>
+            <a href="skype:michail_gura1990?chat"><font-awesome-icon class="icon-3d glitch" :icon="['fab', 'skype']" /></a>
         </div>
     </div>
 </template>
@@ -28,6 +28,9 @@
 </script>
 
 <style scoped >
+a {
+  color: unset;
+}
 .flex-up,
 .flex-social {
   z-index: 2;
@@ -71,18 +74,15 @@
   width: 70px;
   padding: 10px;
 }
-.icon-3d:hover {
-  -webkit-animation: icon3d 200ms infinite;
-  animation: icon3d 200ms infinite;
-}
-
 .glitch:hover {
-  -webkit-animation-name: color-blink;
-          animation-name: color-blink;
+  -webkit-animation-name: color-blink, color-blink-2;
+          animation-name: color-blink, color-blink-2;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  -webkit-animation-delay: 0s, .3s;
+          animation-delay: 0s, .3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   display: block;
   -webkit-transform: skew(0deg);
           transform: skew(0deg);
@@ -159,6 +159,92 @@
     color: #ff5b00;
     -webkit-transform: skew(20deg);
             transform: skew(20deg);
+  }
+  50% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+  100% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+}
+
+
+@-webkit-keyframes color-blink-2 {
+  0% {
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+    color: #fff;
+  }
+  19% {
+    color: #fff;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
+  }
+  20% {
+    color: #ff5b00;
+    -webkit-transform: skew(-10deg);
+            transform: skew(-10deg);
+  }
+  25% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+  39% {
+    color: #fff;
+    -webkit-transform: skew(20deg);
+            transform: skew(20deg);
+  }
+  40% {
+    color: #ff5b00;
+    -webkit-transform: skew(-20deg);
+            transform: skew(-20deg);
+  }
+  50% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+  100% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+}
+@keyframes color-blink-2 {
+  0% {
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+    color: #fff;
+  }
+  19% {
+    color: #fff;
+    -webkit-transform: skew(10deg);
+            transform: skew(10deg);
+  }
+  20% {
+    color: #ff5b00;
+    -webkit-transform: skew(-10deg);
+            transform: skew(-10deg);
+  }
+  25% {
+    color: #fff;
+    -webkit-transform: skew(0deg);
+            transform: skew(0deg);
+  }
+  39% {
+    color: #fff;
+    -webkit-transform: skew(20deg);
+            transform: skew(20deg);
+  }
+  40% {
+    color: #ff5b00;
+    -webkit-transform: skew(-20deg);
+            transform: skew(-20deg);
   }
   50% {
     color: #fff;
