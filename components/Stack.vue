@@ -433,14 +433,16 @@
 
 <style lang="sass" scoped>
     svg
-        height: 50px
-        width: 50px
+        height: 100px
+        width: 100px
         @media (max-width: 767px)    
           height: 30px
           width: 30px
           margin: 10px
     .stack
-        padding: 50px 0
+        padding: 0 0 50px 0
+        @media (max-width: 767px) 
+          padding: 0 0 50px 0
         &__icons
             display: flex
             justify-content: space-around

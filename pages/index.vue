@@ -27,15 +27,19 @@
     </no-ssr> 
   </section>
   <Stack />
+  <hr> 
+  <About />
 </div>
 </template>
 
 
 <script>
 import Stack from '~/components/Stack'
+import About from '~/components/About'
 export default {
   components: {
-    Stack
+    Stack,
+    About
   },
   head() {
     return {
