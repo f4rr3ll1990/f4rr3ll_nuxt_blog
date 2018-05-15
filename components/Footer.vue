@@ -7,6 +7,7 @@
 </template>
 <style scoped>
 .footer {
+  z-index: 20 !important;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;

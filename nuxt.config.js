@@ -53,7 +53,8 @@ module.exports = {
     routes: routes
   },
   plugins: [
-    { src: '~/plugins/vue-particles', ssr: false }
+    { src: '~/plugins/vue-particles', ssr: false },
+    { src: '~/plugins/font-awesome' }
   ],
   modules: [
     'bootstrap-vue/nuxt',
