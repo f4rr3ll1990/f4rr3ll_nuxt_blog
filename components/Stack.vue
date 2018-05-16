@@ -61,7 +61,7 @@
           <svg id="opencart" x="0px" y="0px"
             viewBox="100 0 600 600">
           <style type="text/css">
-            .st0{fill:#FCFDFD;}
+            .st0{fill:#F5F5F5;}
             .st1{fill:#3BC4EF;}
             .st2{fill:#26BFED;}
             .st3{fill:#39C5ED;}

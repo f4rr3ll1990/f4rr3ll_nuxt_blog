@@ -200,7 +200,7 @@ a {
             transform: skew(20deg);
   }
   40% {
-    color: #ff5b00;
+    color: #09cc4a;
     -webkit-transform: skew(-20deg);
             transform: skew(-20deg);
   }
@@ -242,7 +242,7 @@ a {
             transform: skew(20deg);
   }
   40% {
-    color: #ff5b00;
+    color: #09cc4a;
     -webkit-transform: skew(-20deg);
             transform: skew(-20deg);
   }
