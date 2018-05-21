@@ -22,7 +22,7 @@
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
-          style="z-index: 0;">
+        style="z-index: 0;">
       </vue-particles>
     </no-ssr> 
   </section>

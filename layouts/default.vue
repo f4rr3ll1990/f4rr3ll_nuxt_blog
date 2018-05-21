@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   }
 }
 </script>
