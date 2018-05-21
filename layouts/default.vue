@@ -7,7 +7,7 @@
     </div>
     <Navbar/>
     <nuxt />
-    <Side class="d-none d-sm-block" />
+    <Side class="sidebar" />
     <Footer />
   </main>
 </template>
@@ -129,6 +129,12 @@ export default {
   100% {
     -webkit-transform: scale(.5);
             transform: scale(.5);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .sidebar {
+    display: none !important;
   }
 }
 </style>
