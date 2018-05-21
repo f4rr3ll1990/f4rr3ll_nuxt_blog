@@ -131,10 +131,4 @@ export default {
             transform: scale(.5);
   }
 }
-
-@media screen and (max-width: 1023px) {
-  .sidebar {
-    display: none !important;
-  }
-}
 </style>

@@ -4,6 +4,9 @@
         <div class="back">
             <h2>{{ data.title }}</h2>
             <p>{{ data.description }}</p>
+            <div class="pcard_bottom">
+                <a :href="data.link" target="_blank" class="btn btn-outline pcard_link">Перейти на сайт</a>
+            </div>
         </div>
     </div>
 </template>
@@ -36,6 +39,20 @@ export default {
         width: 100%;
         height: 100%;
         transform: rotateY(-180deg);
+        >h2
+            text-transform: uppercase
+        >.pcard_bottom
+            position: absolute
+            bottom: 15px;
+            right: 15px;
+            >.pcard_link
+                text-decoration: none
+                color: #666
+                background-color: #fafafa
+                border: 1px solid #666
+                &:hover
+                  background: #666
+                  color: #fff  
 
     &:hover 
         >.front 
