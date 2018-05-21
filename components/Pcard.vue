@@ -1,5 +1,5 @@
 <template>
-    <div id="pcard" class="flip col-sm-4">
+    <div id="pcard" class="flip col-md-8 col-lg-4">
         <div class="front" v-bind:style="{ backgroundImage: 'url(' + data.image + ')' }"></div>
         <div class="back">
             <h2>{{ data.title }}</h2>
@@ -21,6 +21,7 @@ export default {
 <style lang="sass" scoped>
 
 .flip 
+    background-size: cover
     >.front,
     >.back 
         display: block;
