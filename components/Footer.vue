@@ -56,7 +56,7 @@
   color: #fff;
 }
 .copyright {
-  padding-right: 5px;
+  padding-right: 30px;
 }
 </style>
 
