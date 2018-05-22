@@ -4,7 +4,7 @@
     <h1>{{article.title}}</h1>
     <img class="img-fluid" :src="article.image" :alt="article.title">
     <no-ssr>
-      <p class="post-body" v-html="article.body"></p>
+      <div class="post-body" v-html="article.body"></div>
     </no-ssr>
     <div class="row justify-content-around">
       <button @click="$router.go(-1)" class="btn btn-outline-dark back-link">
@@ -53,6 +53,7 @@ export default {
 </script>
 <style scoped>
 .post-body {
+    box-sizing: border-box;
     font-weight: 400;
     font-style: normal;
     text-rendering: optimizeLegibility;

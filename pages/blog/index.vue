@@ -26,8 +26,11 @@
 
 <script>
 import axios from 'axios'
-import moment from 'moment'
-
+ 
+import dayjs from 'dayjs'
+import ru from 'dayjs/locale/ru'
+dayjs.locale('ru')
+ 
 export default {
   data() {
     return {
@@ -39,8 +42,9 @@ export default {
     }
   },
   async asyncData({ query, error }) {
+    let sortquery = {"$orderby": {"date": -1}};
     let posts = await axios({
-      url: `https://nuxtrest-2bb1.restdb.io/rest/posts?max=6`,
+      url: `https://nuxtrest-2bb1.restdb.io/rest/posts?max=6&h=${JSON.stringify(sortquery)}`,
       method: "get",
       headers: {
         "content-type": "application/json",
@@ -73,9 +77,9 @@ export default {
   },
   methods: {
     async loadData() {
-
+        let sortquery = {"$orderby": {"date": -1}};
         await axios({
-          url: `https://nuxtrest-2bb1.restdb.io/rest/posts?max=2&skip=${this.offset}`,
+          url: `https://nuxtrest-2bb1.restdb.io/rest/posts?max=2&skip=${this.offset}&h=${JSON.stringify(sortquery)}`,
           method: "get",
           headers: {
             "content-type": "application/json",
@@ -117,7 +121,7 @@ export default {
   filters: {
     dateFilter (value) {
       if (value) {
-        return moment(String(value)).format('MM/DD/YYYY hh:mm')
+        return dayjs(value).format('DD MMMM YYYY')
       }
     }
   }
@@ -127,7 +131,7 @@ export default {
 
 
 <style scoped>
-  .article-row {
+  .post {
     padding-top: 30px;
   }
   .post h3,
