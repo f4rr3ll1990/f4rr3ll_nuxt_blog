@@ -2,8 +2,11 @@
 <div>
   <section class="hero">
     <div class="hero__content container">
-      <h3 class="hero__content-header noselect">Front End Web Developer</h3>
-      <p class="hero__content-description noselect">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates nemo atque impedit debitis illum doloribus animi...</p>
+      <h3 class="hero__content-header noselect">Web-Developer</h3>
+      <p class="hero__content-description noselect">
+        WEB-РАЗРАБОТЧИК / HTML-ВЕРСТАЛЬЩИК <br>
+        СПЕЦИАЛИСТ CMS OPENCART / ModX <br>
+        ПРОГРАММИСТ PHP / JAVASCRIPT</p>
     </div>
     <no-ssr>
       <vue-particles
@@ -50,7 +53,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Bungee+Shade')
+
+  @import url('https://fonts.googleapis.com/css?family=Raleway:100')
 
   a:hover
     color: #35495e
@@ -84,7 +88,7 @@ export default {
 
       &-header
         font-size: 7rem
-        font-family: 'Bungee Shade', cursive;
+        font-family: 'Raleway', sans-serif
         text-shadow: 8px 8px #000
         text-transform: uppercase
         margin: 0

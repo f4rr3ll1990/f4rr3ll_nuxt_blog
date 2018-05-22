@@ -1,8 +1,15 @@
 <template>
     <section class="about container"> 
-        <h2 class="about__title">About Me</h2>
-        <p class="about__text">I currently work at The Learning House in Lousville, KY as a member of the Web Team. While my official title is Front End Web Designer, the title of Front End Web Developer is far more accurate based on my active responsibilities.</p>
+        <h2 class="about__title">Обо мне</h2>
+        <p class="about__text">
+            Меня зовут Михаил, я фрилансер веб-разработчик из Украины. Имею стаж работы более 2 лет.
+            Занимаюсь разработкой сайтов под ключ, версткой шаблонов и дальнейшей посадкой на CMS,
+            так же адаптирую сайты под мобильные устройства.
+            В основном работаю с CMS OpenCart и ModX. Пишу хорошо структурированный, валидный и чистый код
+            с использованием современных технологий.
+        </p>
         <div class="about-time">
+            <h3 class="about__subtitle">Технологии которые я использую:</h3>
             <div class="about__time row">            
                 <div class="about__time-days col-sm-6">
                     <h2>На работе:</h2>
@@ -36,9 +43,11 @@
     &__title
         text-align: center
         font-weight: 300
-        font-size: 3.5em
+        font-size: 2.5em
         @media (max-width: 767px)
             font-size: 2.5em
+    &__subtitle
+        text-align: center
     &__text
         max-width: 60vw
         margin-left: auto
