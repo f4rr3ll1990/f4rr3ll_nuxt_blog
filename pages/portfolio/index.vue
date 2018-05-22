@@ -12,7 +12,6 @@
 
 <script>
 import axios from 'axios'
-import moment from 'moment'
 import Pcard from '@/components/Pcard'
 
 export default {
