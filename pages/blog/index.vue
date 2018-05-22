@@ -1,6 +1,7 @@
 <template>
 <div>
   <article class="container">
+    <h1 class="pages-header">Блог</h1>
     <div class="row article-row">
       <div class="col-sm-4 post" v-for="article in articles" :key="article._id">
         <div class="post-wrap">

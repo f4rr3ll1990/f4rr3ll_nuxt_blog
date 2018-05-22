@@ -39,6 +39,12 @@ hr {
 	);
 }
 
+.pages-header {
+	color: rgba(102, 102, 102, 0.815);
+	border-bottom: 1px solid rgba(102, 102, 102, 0.815);
+	font-family: 'Neucha', cursive;
+}
+
 @media screen and (max-width: 1023px) {
   .sidebar {
     display: none !important;

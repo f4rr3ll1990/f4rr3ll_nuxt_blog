@@ -34,6 +34,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Neucha');
+
 #preloader {
   height: 100vh;
   width: 100vw;

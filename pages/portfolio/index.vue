@@ -1,7 +1,8 @@
 <template>
   <div id="portfolio">
     <article class="container">
-      <div class="article-row">
+      <h1 class="pages-header">Портфолио</h1>
+      <div class="row article-row">
         <Pcard v-for="port in portfolio" :key="port._id" :data="port"></Pcard>
       </div>
     </article>

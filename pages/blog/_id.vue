@@ -64,6 +64,9 @@ export default {
     font-size: 1.2em;
     color: #35495e;
 }
+.post-body span {
+  font-size: 1em;
+}
 .back-link svg {
   height: 0.6em;
 }

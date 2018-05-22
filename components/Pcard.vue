@@ -21,7 +21,8 @@ export default {
 <style lang="sass" scoped>
 
 .flip 
-    background-size: cover
+    background-size: cover   
+    margin-top: 30px
     >.front,
     >.back 
         display: block;
