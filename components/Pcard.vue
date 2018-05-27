@@ -74,12 +74,12 @@ export default {
       background-position: center!important;
       height: 220px;
       padding: 1em 2em;
-      background: #313131;
+      background: linear-gradient(to left, #43436d, #4b548f8e), #5d5d5f;
       border-radius: 10px;
       p 
         font-size: 0.9125rem;
         line-height: 160%;
-        color: #999;
+        color: #f2f2f2;
       
     
 

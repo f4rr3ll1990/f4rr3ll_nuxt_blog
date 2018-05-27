@@ -7,9 +7,11 @@
         <div class="post-wrap">
           <nuxt-link :to="'/blog/' + article._id">
             <img class="img-fluid" :src="article.image" :alt="article.title">
-            <h3>{{ article.title }}</h3>
+            <div class="today-box">
+              <h4>{{ article.title }}</h4>
+              <span>{{ article.date | dateFilter }}</span>
+            </div>
             <p>{{ article.preview }}</p>
-            <span>{{ article.date | dateFilter }}</span>
           </nuxt-link>
         </div>
       </div>
@@ -138,10 +140,8 @@ export default {
 <style scoped>
   .post {
     padding-top: 30px;
-  }
-  .post h3,
-  .post p,
-  .post span {
+  },
+  .post p {
     font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;    
     font-weight: 350;
     color: #35495e;
@@ -150,10 +150,10 @@ export default {
   }
   .post-wrap {
     box-shadow: 0 2px 2px #aaa;
-    padding: 0 0 25px 0;
+    transition: all 0.3s ease;
   }
   .post-wrap:hover {
-    box-shadow: 1px 3px 2px #aaa;
+    box-shadow: 4px 4px 4px #aaa;
   }
   h3 {
     text-align: center;
@@ -166,4 +166,36 @@ export default {
   .pending {
     margin: 50px auto;
   }
+
+
+  .today-box {
+  background: linear-gradient(to left, #43436d, #4b548f8e), #5d5d5f;
+  color: #FFF;
+  padding: 37px 40px;
+  position: relative;
+  box-shadow: 0px 0px 40px -9px #485fed;
+  margin-bottom: 50px;
+}
+.today-box::before {
+  content: "";
+  background: linear-gradient(to left, #485fed, rgba(255, 44, 118, 0.25)), #485fed;
+  opacity: 0.4;
+  z-index: -1;
+  /*negative*/
+  /* relative with .mobile-wrapper*/
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translatex(-50%);
+  border-radius: 50%;
+  box-shadow: 0px 0px 40px 0 #485fed;
+}
+
+ .today-box {
+   color: #fff;
+ }
 </style>
