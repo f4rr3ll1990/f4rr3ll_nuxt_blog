@@ -91,9 +91,14 @@ export default {
           console.log(res.data.length);
           if(res.data.length !== 0) {
             this.offset += 6;
-          } else {
+          }  else {
             this.noData = true;
           }
+
+          if(res.data.length < 6) {
+            this.noData = true;
+          }
+          
           console.log(res.data);
           res.data.forEach(doc => {
             const data = {
