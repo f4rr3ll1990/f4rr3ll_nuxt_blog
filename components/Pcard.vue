@@ -4,8 +4,11 @@
         <div class="back">
             <h2>{{ data.title }}</h2>
             <p>{{ data.description }}</p>
-            <div class="pcard_bottom">
+            <div class="pcard_bottom" v-if="data.outdated==false">
                 <a :href="data.link" target="_blank" class="btn btn-outline pcard_link">Перейти на сайт</a>
+            </div>
+            <div class="pcard_bottom" v-if="data.outdated==true">
+                Устарел
             </div>
         </div>
     </div>
@@ -19,6 +22,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
 
 .flip 
     background-size: cover   

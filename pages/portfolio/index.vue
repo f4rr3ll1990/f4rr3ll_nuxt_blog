@@ -20,7 +20,7 @@ export default {
   },
   async asyncData({ query, error }) {
     let portfolio = await axios({
-      url: `https://nuxtrest-2bb1.restdb.io/rest/portfolio`,
+      url: `https://nuxtrest-2bb1.restdb.io/rest/portfolio?sort=_id&dir=-1`,
       method: "get",
       headers: {
         "content-type": "application/json",
